@@ -16,18 +16,18 @@
                         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
                             <input type="text" class="form-control" name="username" maxlength="50" [(ngModel)]="model.username" #username="ngModel" required
                                 placeholder="User Name" />
-                            <div *ngIf="f.submitted && !username.valid" class="help-block float-left">Username is required</div>
+                            <div *ngIf="f.submitted && !username.valid" class="help-block float-left">Username is required 1</div>
                         </div>
                         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
                             <input type="password" class="form-control" name="password" maxlength="50" [(ngModel)]="model.password" #password="ngModel"
                                 required placeholder="Password" />
-                            <div *ngIf="f.submitted && !password.valid" class="help-block float-left">Password is required</div>
+                            <div *ngIf="f.submitted && !password.valid" class="help-block float-left">Password is required 2</div>
                         </div>
                         <div class="form-group mt-4">                           
                             <div class="checkbox">
-                                <label class="float-left"> <input type="checkbox" id="chkRemember" (change)="checkedtrue()" > Remember me</label>
+                                <label class="float-left"> <input type="checkbox" id="chkRemember" (change)="checkedtrue()" > Remember me 3</label>
                                 <span class="float-right d-none">
-                                    <span class="forgetPassword" href="#?"  (click)="$event.preventDefault();"> Forgot Password? </span>
+                                    <span class="forgetPassword" href="#?"  (click)="$event.preventDefault();"> Forgot Password? 74</span>
                                 </span>
                             </div>
                         </div>
