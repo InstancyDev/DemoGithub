@@ -1,0 +1,51 @@
+<div class="col-md-12 col-sm-12 float-left" *ngIf="errorAlert">
+        <div class="alert alert-warning">
+            <a class="close" data-dismiss="alert" (click)="errorAlert=false" >×</a>
+            <span>Invalid Email or Password!</span>
+        </div>
+    </div>
+<div align="center">
+    <section id="loginsection" class="card mw-27 control-panel mt-5">
+        <header *ngIf="!ispopup" id="tdHeader" class="card-header login-card">
+            <h3 ><i class="fas fa-sign-in-alt"></i> Login</h3>
+        </header>
+        <div class="card-body">
+            <div id="tblLoginCtrl1" class="login-wrap">
+                <div class="login">
+                    <form name="form" (ngSubmit)="f.form.valid && Login()" #f="ngForm" novalidate>
+                        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                            <input type="text" class="form-control" name="username" maxlength="50" [(ngModel)]="model.username" #username="ngModel" required
+                                placeholder="User Name" />
+                            <div *ngIf="f.submitted && !username.valid" class="help-block float-left">Username is required</div>
+                        </div>
+                        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                            <input type="password" class="form-control" name="password" maxlength="50" [(ngModel)]="model.password" #password="ngModel"
+                                required placeholder="Password" />
+                            <div *ngIf="f.submitted && !password.valid" class="help-block float-left">Password is required</div>
+                        </div>
+                        <div class="form-group mt-4">                           
+                            <div class="checkbox">
+                                <label class="float-left"> <input type="checkbox" id="chkRemember" (change)="checkedtrue()" > Remember me</label>
+                                <span class="float-right d-none">
+                                    <span class="forgetPassword" href="#?"  (click)="$event.preventDefault();"> Forgot Password? </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" title="Login" value="Login" class="btn btn-primary btn-block btn-outline-primary mb-4">
+                            <input type="button" title="Sign Up" value="Sign Up" class="btn btn-primary btn-block btn-outline-primary">
+                        </div>
+                        <div class="form-group clearfix">
+                            <!-- <span class="float-left">
+                                <span href="#?" class="forgetPassword" title="System Requirements" (click)="$event.preventDefault();">System Requirements</span>
+                            </span> -->
+                            <!-- <span class="float-right">
+                                <span href="#?" class="forgetPassword" (click)="$event.preventDefault();">Support</span>
+                            </span> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
